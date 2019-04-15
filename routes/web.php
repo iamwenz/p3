@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','FormController@welcome');
+
+Route::get('/register','FormController@form');
+
+Route::get('/practice/{title}','FormController@practice');
+
+Route::get('/confirmation','FormController@confirm_page');
+
+Route::post('/submit_form','FormController@process_form');
+
+/* This is for practice*/
+
+//Route::any('/practice/{n?}', 'PracticeController@index');

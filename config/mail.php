@@ -133,4 +133,8 @@ return [
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
 
+    /*
+    | Contact Email for PumaLai Veterinarian
+    */
+    'supportEmail' => 'help@pumalai.com'
 ];

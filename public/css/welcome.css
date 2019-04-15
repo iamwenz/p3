@@ -1,0 +1,31 @@
+
+#formLink {
+  display: none;
+}
+
+h3 {
+    align-items: center;
+    padding: 10px;
+}
+
+h5 {
+    align-items: center;
+    padding: 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+p {
+  width: 50vw;
+  height: auto;
+  color: orange;
+}
+
+table {
+  width: 40vw;
+}

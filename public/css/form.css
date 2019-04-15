@@ -1,0 +1,30 @@
+#formBody {
+  border: 2px solid grey;
+}
+
+table {
+  width: 50vw;
+}
+
+table, th, td {
+  border: 2px solid grey;
+}
+
+textarea {
+  width: 50vw;
+  height: 25vh;
+  resize: none;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+  padding-right: 10px;
+}

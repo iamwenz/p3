@@ -1,99 +1,31 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Laravel</title>
+@section('title')
+Home
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+@section('head')
+<!-- Styles-->
+<link href="/css/welcome.css" type="text/css" rel="stylesheet">
+<!-- javascript-->
+<script src="/js/tools.js" type="text/javascript"></script>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+@endsection
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+@section('content')
+<body>
+  <div class='flex'>
+    <img src="/images/home.jpg" />
+    <h3>Welcome to Puma Lai Veterinary Clinic</h3>
+      <p>
+        Puma Lai Veterinary Hospital provides quality veterinary care for dogs, cats, pocket pets and exotics in Schuylkill Haven, Pennsylvania and the surrounding communities. Our modern and inviting hospital boasts superb veterinarians and caring support staff that are dedicated to our patients, clients, and community.
+      </p>
+      <table id='verifyTable'>
+        <tr>
+          <th>Verification Code:</th><td id='code'>{{$code}}</td><td><input id='codeInput' type='text' placeholder="Enter code here"/>&nbsp;&nbsp;<input type="submit" onClick='verify()' value='submit'/></td>
+        </tr>
+      </table>
+    <a id='formLink' href='./register'>Please Fill out the Form for Appointment</a>
+  </div>
+</body>
+@endsection
